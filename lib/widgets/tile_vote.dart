@@ -3,8 +3,15 @@ import 'package:flutter/material.dart';
 class CustomTileVote extends StatelessWidget {
   final String? nama;
   final String? imgUrl;
+  final bool isMale;
   final VoidCallback? onTap;
-  const CustomTileVote({super.key, this.imgUrl, this.nama, this.onTap});
+  const CustomTileVote({
+    super.key,
+    this.imgUrl,
+    this.nama,
+    this.onTap,
+    this.isMale = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +26,7 @@ class CustomTileVote extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 18),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: const Color(0xffD1D1D1),
+          color: isMale ? const Color(0xffCCDAFC) : const Color(0xffFF6A88),
         ),
         child: Row(
           children: [

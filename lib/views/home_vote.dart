@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:vote_app/views/vote_page.dart';
+import 'package:vote_app/widgets/tile_filter_peserta.dart';
 import 'package:vote_app/widgets/tile_vote.dart';
 
 class HomeVote extends StatelessWidget {
@@ -106,6 +107,21 @@ class HomeVote extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 18),
+          Flexible(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                FilterPeserta(
+                  title: 'Finalis Putra',
+                  isMale: true,
+                ),
+                FilterPeserta(
+                  title: 'Finalis Putri',
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 18),
           //TileVote
           CustomTileVote(
             nama: 'Muhammad\nIchsan',
@@ -116,6 +132,18 @@ class HomeVote extends StatelessWidget {
                 builder: (context) => const VotePage(),
               );
             },
+            isMale: true,
+          ),
+          CustomTileVote(
+            nama: 'Muhammad\nIchsan',
+            imgUrl: 'assets/img_profile.png',
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => const VotePage(),
+              );
+            },
+            isMale: true,
           ),
           CustomTileVote(
             nama: 'Muhammad\nIchsan',
@@ -136,16 +164,7 @@ class HomeVote extends StatelessWidget {
                 builder: (context) => const VotePage(),
               );
             },
-          ),
-          CustomTileVote(
-            nama: 'Muhammad\nIchsan',
-            imgUrl: 'assets/img_profile.png',
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) => const VotePage(),
-              );
-            },
+            isMale: true,
           ),
           CustomTileVote(
             nama: 'Muhammad\nIchsan',
